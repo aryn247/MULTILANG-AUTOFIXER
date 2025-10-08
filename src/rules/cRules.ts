@@ -1,9 +1,12 @@
-import Parser = require("tree-sitter");
-import c = require("tree-sitter-c");
+import { language } from "tree-sitter-rust";
+
+const Parser = require("tree-sitter");
+const c = require("tree-sitter-c");
 
 export function getcFixes(code: string) {
   const parser = new Parser();
-  parser.setLanguage(c);
+  parser.setLanguage(c as unknown as import("tree-sitter").Language);
+
 
   const tree = parser.parse(code);
   const fixes: { line: number; fix: string }[] = [];

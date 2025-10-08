@@ -1,9 +1,12 @@
-import Parser = require("tree-sitter");
-import php = require("tree-sitter-php");
+import { php_only } from "tree-sitter-php";
+
+const Parser = require("tree-sitter");
+const php = require("tree-sitter-php");
 
 export function getphpFixes(code: string) {
   const parser = new Parser();
-  parser.setLanguage(php);
+parser.setLanguage(php  as unknown as import("tree-sitter").Language);
+parser.setLanguage(php_only as unknown as import("tree-sitter").Language);
 
   const tree = parser.parse(code);
   const fixes: { line: number; fix: string }[] = [];

@@ -1,71 +1,93 @@
-# multilang-autofixer README
+Multi-Language Real-Time Syntax Auto-Fixer
 
-This is the README for your extension "multilang-autofixer". After writing up a brief description, we recommend including the following sections.
+A Visual Studio Code extension that automatically detects and fixes common syntax errors in real time while you type.
+Powered by Tree-sitter, it supports multiple languages with a single lightweight parsing engine.
 
-## Features
+✨ Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+🔥 Real-Time Fixes – Automatically corrects frequent syntax mistakes as you type.
 
-For example if there is an image subfolder under your extension project workspace:
+🌍 Multi-Language Support – Works with:
 
-\!\[feature X\]\(images/feature-x.png\)
+Python 🐍
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+JavaScript ⚡
 
-## Requirements
+Java ☕
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+C 🔧
 
-## Extension Settings
+C++ 🚀
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Ruby 💎
 
-For example:
+Rust 🦀
+
+PHP 🐘
+
+Go 🐹
+
+⚡ Powered by Tree-sitter – Fast, incremental parsing for smooth performance.
+
+📝 Productivity Booster – Reduce debugging interruptions caused by typos and missing punctuation.
+
+🛠 Customizable – Enable/disable the auto-fixer or tweak rules per language.
+
+
+📦 Requirements
+
+VS Code 1.XX.X or higher
+
+Node.js >=14.x (recommended for building & running Tree-sitter parsers)
+
+⚙ Extension Settings
 
 This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+autoFixSyntax.enable → Enable/Disable auto-fix globally
 
-## Known Issues
+(planned) autoFixSyntax.log → Show applied fixes in an on-screen log
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+(planned) autoFixSyntax.languages → Customize enabled languages
 
-## Release Notes
+🐞 Known Issues
 
-Users appreciate release notes as you update your extension.
+Some advanced syntax errors may not yet be recognized.
 
-### 1.0.0
+Auto-fixes are rule-based — edge cases may require manual correction.
 
-Initial release of ...
+👉 Please report issues on the GitHub Issues page
+.
 
-### 1.0.1
+📜 Release Notes
+1.0.0
 
-Fixed issue #.
+Initial release with support for Python, JavaScript, Java, C, C++, Ruby, Rust, PHP, and Go.
 
-### 1.1.0
+Real-time auto-fixes powered by Tree-sitter.
 
-Added features X, Y, and Z.
+Configurable global enable/disable option.
 
----
+🗺 Roadmap
 
-## Following extension guidelines
+ Add support for additional languages (C#, TypeScript, Kotlin, etc.)
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+ Provide per-language rule customization
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+ Allow users to view fix history in output panel
 
-## Working with Markdown
+🙌 Contributing
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+Pull requests are welcome!
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+Fork the repo
 
-## For more information
+Create a feature branch
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+Submit a PR after testing
 
-**Enjoy!**
+Please open an issue first to discuss your ideas.
+
+📜 License
+
+This project is licensed under the MIT License.

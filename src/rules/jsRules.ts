@@ -1,9 +1,11 @@
-import Parser = require("tree-sitter");
-import JavaScript = require("tree-sitter-javascript");
+import Parser, { Language } from "tree-sitter";
+import * as JavaScript from "tree-sitter-javascript";
 
 export function getJSFixes(code: string) {
   const parser = new Parser();
-  parser.setLanguage(JavaScript);
+ parser.setLanguage(JavaScript.language as unknown as import("tree-sitter").Language);
+
+
 
   const tree = parser.parse(code);
   const fixes: { line: number; fix: string }[] = [];
@@ -21,10 +23,9 @@ export function getJSFixes(code: string) {
     const txt = node.text;
 
     // 1-10: Missing semicolons at end of statements where required
-    if (/[^;{}\s]$/.test(txt) && !/;$/.test(txt) && /^[\s\S]*[a-zA-Z0-9_$]+\s*=/.test(txt)) {
+      if (/[^;{}\s]$/.test(txt) && !/;$/.test(txt) && /^[\s\S]*[a-zA-Z0-9_$]+\s*=/.test(txt)) {
       addFix(node, ";");
     }
-
     // 11-15: Missing curly braces {} for control statements (if, else, for, while)
     if (/^(if|else if|else|for|while|do|switch|try|catch|finally)\s*[\(]?.*[\)]?\s*(?!\{)/.test(txt)) {
       addFix(node, "{}");

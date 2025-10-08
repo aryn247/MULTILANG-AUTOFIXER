@@ -1,9 +1,9 @@
-import Parser = require("tree-sitter");
-import cpp = require("tree-sitter-cpp");
+const Parser = require("tree-sitter");
+const cpp = require("tree-sitter-cpp");
 
 export function getcppFixes(code: string) {
   const parser = new Parser();
-  parser.setLanguage(cpp);
+parser.setLanguage(cpp as unknown as import("tree-sitter").Language);
 
   const tree = parser.parse(code);
   const fixes: { line: number; fix: string }[] = [];

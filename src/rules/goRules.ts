@@ -1,9 +1,10 @@
-import Parser = require("tree-sitter");
-import go = require("tree-sitter-go");
+const Parser = require("tree-sitter");
+const go = require("tree-sitter-go");
 
 export function getgoFixes(code: string) {
   const parser = new Parser();
-  parser.setLanguage(go);
+ parser.setLanguage(go as unknown as import("tree-sitter").Language);
+
 
   const tree = parser.parse(code);
   const fixes: { line: number; fix: string }[] = [];

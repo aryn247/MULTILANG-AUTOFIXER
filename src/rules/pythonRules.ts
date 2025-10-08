@@ -1,9 +1,10 @@
-import Parser = require("tree-sitter");
-import python = require("tree-sitter-python");
+const Parser = require("tree-sitter");
+const python = require("tree-sitter-python");
 
 export function getPythonFixes(code: string) {
   const parser = new Parser();
-  parser.setLanguage(python);
+ parser.setLanguage(python as unknown as import("tree-sitter").Language);
+
 
   const tree = parser.parse(code);
   const fixes: { line: number; fix: string }[] = [];

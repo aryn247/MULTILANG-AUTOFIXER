@@ -1,6 +1,6 @@
 import { getPythonFixes } from "./pythonRules";
 import { getJSFixes } from "./jsRules";
-import { getJavaFixes } from "./javaRules";
+import { getjavaFixes } from "./javaRules";
 import { getcppFixes } from "./cppRules";
 import { getcFixes } from "./cRules";
 import { getphpFixes } from "./phpRules";
@@ -9,7 +9,7 @@ import { getrubyFixes } from "./rubyRules";
 import { getrustFixes } from "./rustRule";
 
 export function
-getcFixesforLanguage(languageId: string, code : string) {
+getFixesforLanguage(languageId: string, code : string) {
   switch (languageId) {
     case "python" :
       return getPythonFixes(code);
@@ -19,7 +19,7 @@ getcFixesforLanguage(languageId: string, code : string) {
       return getJSFixes(code);
     
     case "java":
-      return getJavaFixes(code);
+      return getjavaFixes(code);
 
     case "cpp":
       return getcppFixes(code);

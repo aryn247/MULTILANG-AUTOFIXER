@@ -4,7 +4,7 @@ import * as assert from 'assert';
 // as well as import your extension to test it
 import * as vscode from 'vscode';
 // import * as myExtension from '../../extension';
-import { getFixesForLanguage } from "./rules"
+import { getFixesforLanguage } from "./rules" ;
 
 
 
@@ -21,7 +21,7 @@ const disposable = vscode.workspace.onDidChangeTextDocument((event) => {
 	if (!editor|| event.document ! == editor.document) return ;
 	const languageId=	event.document.languageId;
 	const text = event.document.getText();
-	const fixes = getFixesForLanguage(languageId,text);
+	const fixes = getFixesforLanguage(languageId,text);
 	
 	if ( fixes.length>0){
 		applyFixes(editor,event.document,fixes);

@@ -1,9 +1,10 @@
-import Parser = require("tree-sitter");
-import ruby = require("tree-sitter-ruby");
+const Parser = require("tree-sitter");
+const ruby = require("tree-sitter-ruby");
 
 export function getrubyFixes(code: string) {
   const parser = new Parser();
-  parser.setLanguage(ruby);
+  parser.setLanguage(ruby as unknown as import("tree-sitter").Language);
+
 
   const tree = parser.parse(code);
   const fixes: { line: number; fix: string }[] = [];

@@ -1,13 +1,16 @@
 {
   "name": "multilang-autofixer",
-  "displayName": " CodeMedic",
+  "displayName": "CodeMedic",
   "description": "Multi-Language Real-Time Syntax Auto-Fixer Using Tree-sitter",
   "version": "0.0.1",
   "publisher": "Aryan Shrivastav",
   "engines": {
-  "vscode": "^1.104.0"
+    "vscode": "^1.104.0"
   },
-  "categories": ["Programming Languages", "Linters"],
+  "categories": [
+    "Programming Languages",
+    "Linters"
+  ],
   "activationEvents": [
     "onLanguage:python",
     "onLanguage:javascript",
@@ -26,74 +29,74 @@
         "command": "autoFixSyntax.start",
         "title": "Start Auto Syntax Fixer"
       },
-       {
-        "command": "multilang-autofixer.ShowLog ",
+      {
+        "command": "multilang-autofixer.ShowLog",
         "title": "AutoFix: ShowLog"
       },
-       {
-        "command": "multilang-autofixer.toggle ",
+      {
+        "command": "multilang-autofixer.toggle",
         "title": "AutoFix: Toggle On/off"
       }
     ],
     "configuration": {
       "type": "object",
       "title": "Multi-Language Auto-Fixer",
-      "properties": {"multilangAutofix.autoapply":{
-        "type": "boolean",
-        "default":true ,
-        "description": "Automatically apply safe fixes without confirmation."
-      },
-      "multilangAutofix.python.ensabled" : {
-        "type" :"boolean",
-        "default":true ,
-        "description": "Ensabled AutoFixs for Python."
-      },
-
-      "multilangAutofix.javascript.ensabled" : {
-        "type" :"boolean",
-        "default":true ,
-        "description": "Ensabled AutoFixs for javascript."
-      },
-
-      "multilangAutofix.Java.ensabled" : {
-        "type" :"boolean",
-        "default":true ,
-        "description": "Ensabled AutoFixs for Java."
-      },
-      "multilangAutofix.php.ensabled" : {
-        "type" :"boolean",
-        "default":true ,
-        "description": "Ensabled AutoFixs for php."
-      },
-      "multilangAutofix.cpp.ensabled" : {
-        "type" :"boolean",
-        "default":true ,
-        "description": "Ensabled AutoFixs for Python."
-      },
-      "multilangAutofix.go.ensabled" : {
-        "type" :"boolean",
-        "default":true ,
-        "description": "Ensabled AutoFixs for Python."
-      },
-      "multilangAutofix.c.ensabled" : {
-        "type" :"boolean",
-        "default":true ,
-        "description": "Ensabled AutoFixs for Python."
-      },
-      "multilangAutofix.ruby.ensabled" : {
-        "type" :"boolean",
-        "default":true ,
-        "description": "Ensabled AutoFixs for Python."
-      },
-      "multilangAutofix.rust.ensabled" : {
-        "type" :"boolean",
-        "default":true ,
-        "description": "Ensabled AutoFixs for Python."
+      "properties": {
+        "multilangAutofix.autoapply": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically apply safe fixes without confirmation."
+        },
+        "multilangAutofix.python.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AutoFixes for Python."
+        },
+        "multilangAutofix.javascript.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AutoFixes for JavaScript."
+        },
+        "multilangAutofix.java.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AutoFixes for Java."
+        },
+        "multilangAutofix.php.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AutoFixes for PHP."
+        },
+        "multilangAutofix.cpp.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AutoFixes for C++."
+        },
+        "multilangAutofix.go.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AutoFixes for Go."
+        },
+        "multilangAutofix.c.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AutoFixes for C."
+        },
+        "multilangAutofix.ruby.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AutoFixes for Ruby."
+        },
+        "multilangAutofix.rust.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AutoFixes for Rust."
+        }
       }
-    }
     }
   },
   "scripts": {
+    "build": "tsc -p . && node esbuild.js",
     "vscode:prepublish": "npm run package",
     "compile": "npm run check-types && npm run lint && node esbuild.js",
     "watch": "npm-run-all -p watch:*",
@@ -121,14 +124,18 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "tree-sitter-c": "^0.24.1",
-    "tree-sitter-cpp": "^0.23.4",
+    "compile": "^0.0.2",
+    "npm": "^11.6.1",
+    "run": "^1.5.0",
+    "tree-sitter": "^0.25.0",
+    "tree-sitter-c": "^0.21.4",
+    "tree-sitter-cpp": "^0.22.3",
     "tree-sitter-go": "^0.25.0",
-    "tree-sitter-java": "^0.23.5",
-    "tree-sitter-javascript": "^0.25.0",
-    "tree-sitter-php": "^0.24.2",
-    "tree-sitter-python": "^0.25.0",
-    "tree-sitter-ruby": "^0.23.1",
-    "tree-sitter-rust": "^0.24.0"
+    "tree-sitter-java": "^0.21.0",
+    "tree-sitter-javascript": "^0.21.4",
+    "tree-sitter-php": "^0.22.2",
+    "tree-sitter-python": "^0.21.0",
+    "tree-sitter-ruby": "^0.21.0",
+    "tree-sitter-rust": "^0.21.0"
   }
 }
